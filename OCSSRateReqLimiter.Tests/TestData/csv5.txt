@@ -1,0 +1,2 @@
+﻿post,/Account/Login,5,30,100
+dummymethod,/Account/Register,2

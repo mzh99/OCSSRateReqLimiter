@@ -1,0 +1,2 @@
+﻿post,/Account/Login,5,30,100
+get,/Account/Login,5,xyz,100

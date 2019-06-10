@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCSSRateReqLimiter", "OCSSRateReqLimiter\OCSSRateReqLimiter.csproj", "{F3CC9863-DA5A-476A-B536-6436C64E1B18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OCSSRateReqLimiter", "OCSSRateReqLimiter\OCSSRateReqLimiter.csproj", "{F3CC9863-DA5A-476A-B536-6436C64E1B18}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OCSSRateReqLimiter.Tests", "OCSSRateReqLimiter.Tests\OCSSRateReqLimiter.Tests.csproj", "{A4502FFA-D663-40D8-80CA-E7143C8925FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F3CC9863-DA5A-476A-B536-6436C64E1B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3CC9863-DA5A-476A-B536-6436C64E1B18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3CC9863-DA5A-476A-B536-6436C64E1B18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4502FFA-D663-40D8-80CA-E7143C8925FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4502FFA-D663-40D8-80CA-E7143C8925FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4502FFA-D663-40D8-80CA-E7143C8925FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4502FFA-D663-40D8-80CA-E7143C8925FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
