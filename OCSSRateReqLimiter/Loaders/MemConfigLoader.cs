@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using OCSS.StringUtil;
 
 namespace OCSS.Web.RateReqLimiter {
 
@@ -10,7 +11,7 @@ namespace OCSS.Web.RateReqLimiter {
 
       public MemConfigLoader(IEnumerable<RateLimitRule> rules, IEnumerable<string> whitelistIPv4) {
          this.rules = rules.ToArray();
-         this.whitelistIPv4 = whitelistIPv4.ToArray();
+         this.whitelistIPv4 = whitelistIPv4.Select(s => s.ParseIPv4()).ToArray();
       }
 
       public IEnumerable<string> LoadWhitelist() {

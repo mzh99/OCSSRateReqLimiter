@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Extensions.Configuration;
+using OCSS.StringUtil;
 
 namespace OCSS.Web.RateReqLimiter {
 
@@ -80,7 +81,7 @@ namespace OCSS.Web.RateReqLimiter {
       public IEnumerable<string> LoadWhitelist() {
          var cfg = config.GetSection(SectionKeyWhitelist).Get<CfgRateWhitelistSection>();
          lastWhitelistVer = cfg.Version; // update version which is our trigger for changes
-         return cfg.Entries.Select(e => e.ToLower());
+         return cfg.Entries.Select(e => e.ParseIPv4());
       }
 
 

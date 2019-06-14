@@ -94,9 +94,11 @@ Tech Notes:
    // then add rate-limiting rules to IoC container as a singleton
    services.AddSingleton<RateLimits>(limits);
 ```
-6) The Razor Filter response with Http Status Code 429 when a limit is reached.
+6) The Razor Filter responds with Http Status Code 429 when a limit is reached.
    In this case, a "Retry-After" response header is added with a value in seconds to wait.
    For example, if you exceed an hour limit in the first 5 minutes, you should see a value of 3300 or 55*60.
    This makes it feasible to react programmatically without any parsing of return values.
 
-7) Currently, IPv4 addresses for whitelist are not validated. This could be a future enhancement if you are concerned about data-entry errors.
+7) IPv4 addresses for whitelist are validated to be four octets separated by a dot. Each octet must be between 0 and 255.
+   Formatting will accept outer whitespace and leading zeros and will convert to a normalized IPv4 address.
+   FormatException will be raised for anything else.

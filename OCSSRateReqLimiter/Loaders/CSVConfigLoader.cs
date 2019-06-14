@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using OCSS.StringUtil;
 
 namespace OCSS.Web.RateReqLimiter {
 
@@ -41,7 +42,7 @@ namespace OCSS.Web.RateReqLimiter {
             throw new FileNotFoundException("IPv4 whitelist file not found: " + WhitelistIPv4FileName);
          // save last write time as it's the trigger for ConfigHasChanged()
          lastWriteDateWhitelistIPv4 = File.GetLastWriteTimeUtc(WhitelistIPv4FileName);
-         return File.ReadAllLines(WhitelistIPv4FileName).Where(s => string.IsNullOrWhiteSpace(s) == false).Select(s => s.Trim());
+         return File.ReadAllLines(WhitelistIPv4FileName).Where(s => string.IsNullOrWhiteSpace(s) == false).Select(s => s.ParseIPv4());
 
       }
 
