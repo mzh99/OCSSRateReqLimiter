@@ -30,7 +30,8 @@ namespace OCSS.Web.RateReqLimiter.Filters {
          RateLimitCacheEntry cacheRec = null;
 
          string path = context.ActionDescriptor.ViewEnginePath;
-         string method = context.HandlerMethod.HttpMethod;
+         string method = context.HttpContext.Request.Method;
+         // string method = context.HandlerMethod.HttpMethod;
          string key = RateLimitRule.MakeRuleKey(path, method);
          if (rateLimits.RateLimitRuleMatches(key)) {
             logger?.LogDebug($"Limit rule for page: {path} and method: {method} matched");
